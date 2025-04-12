@@ -1,3 +1,17 @@
+// 🔍 Problem Title: Kth Missing Positive Number
+// 📝 Description:
+// Given a sorted array arr containing distinct positive integers, and an integer k, return the kth missing positive number starting from 1.
+
+// 🧪 Example 1:
+// Input:
+// arr = [2, 3, 4, 7, 11]
+// k = 5
+
+// Output:
+// 9
+// Explanation:
+// The missing numbers are [1, 5, 6, 8, 9, 10, ...]. The 5th missing number is 9.
+
 #include<iostream>
 #include<vector>
 #include<ctime>

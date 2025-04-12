@@ -1,3 +1,10 @@
+// 📝 Description:
+// Given a sorted array of integers arr (which may contain duplicates) and a target value target, return the starting and ending position of the given target value in the array.
+
+// If the target is not found in the array, return {-1, -1}.
+
+// You must write an algorithm with O(log n) runtime complexity.
+
 #include<iostream>
 #include<vector>
 #include<ctime>
