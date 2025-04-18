@@ -1,3 +1,17 @@
+// 🔍 Problem Title: Find Minimum in Rotated Sorted Array
+// 📝 Description:
+// Suppose an array of distinct integers arr is sorted in ascending order, and then rotated at some unknown pivot.
+// (That is, the array becomes something like [4,5,6,7,0,1,2]).
+
+// Write a function to find the minimum element in the rotated sorted array.
+// Your algorithm must run in O(log n) time.
+
+// 🧪 Example 1:
+// Input:
+// arr = [4, 5, 6, 7, 0, 1, 2]
+// Output:
+// 0
+
 #include<iostream>
 #include<vector>
 #include<climits>

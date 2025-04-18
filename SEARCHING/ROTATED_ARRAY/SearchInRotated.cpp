@@ -1,3 +1,19 @@
+// 🔍 Problem Title: Search in Rotated Sorted Array
+// 📝 Description:
+// There is an integer array arr sorted in ascending order (with distinct values), which is rotated at an unknown pivot index.
+
+// You are given the array and a target value. Implement a function to search the target in the array.
+// If the target exists, return its index. Otherwise, return -1.
+
+// Your algorithm must run in O(log n) time.
+
+// 🧪 Example 1:
+// Input:
+// arr = [4,5,6,7,0,1,2]
+// target = 0
+// Output:
+// 4
+
 #include<iostream>
 #include<vector>
 #include<climits>
