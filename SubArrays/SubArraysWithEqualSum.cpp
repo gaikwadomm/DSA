@@ -39,7 +39,6 @@ int main(){
 
     // sort(arr.begin(), arr.end());
 
-
     // cout<<"\nEnter the differen to keep in between : ";
     // cin>>n;
     // pair<int, int> ans = PairDifferBinary(arr, n);

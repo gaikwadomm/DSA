@@ -24,43 +24,73 @@
 #include<algorithm>
 using namespace std;
 
-int findPages(vector<int> arr, int N, int M){
+int findPages(vector<int> arr, int N, int M){  
+//M number of Students in which books to distribute and N is the number of books
+    // if(M>N){
+    //     return -1;
+    // }
+    // int mid, start = 0, end=0,page,count,ans;
+    // for(int i =0;i<N;i++){
+    //     if(start<arr[i]){
+    //         start = arr[i];
+    //     }
+    //     end += arr[i];
+    // }
+
+//     while(start<=end){
+//         mid = start + (end-start)/2;
+//         page=0, count=1;
+//         for(int i =0;i<N;i++){
+//             page+=arr[i];
+//             if(page>mid){
+//                 page=arr[i];
+//                 count += 1;
+//             }
+//         }
+
+//         if(count<=M){
+//             end=mid-1;
+//             ans=mid;
+//         }
+//         else{
+//             start = mid + 1;
+//         }
+//     }
     if(M>N){
         return -1;
     }
-    int mid, start = 0, end=0,page,count,ans;
-    for(int i =0;i<N;i++){
-        if(start<arr[i]){
+    int mid, ans, page, count, start=arr[0], end=0;
+    for(int i=0;i<N;i++){
+        if(arr[i]>start){
             start = arr[i];
         }
-        end += arr[i];
+        end+=arr[i];
     }
 
     while(start<=end){
-        mid = start + (end-start)/2;
-        page=0, count=1;
-        for(int i =0;i<N;i++){
+        mid = start+(end-start)/2;
+        count=1, page=0;
+        for(int i=0;i<N;i++){
             page+=arr[i];
             if(page>mid){
                 page=arr[i];
-                count += 1;
+                count++;
             }
         }
-
         if(count<=M){
-            end=mid-1;
-            ans=mid;
+            ans = mid;
+            end = mid-1;
         }
         else{
-            start = mid + 1;
+            start=mid+1;
         }
     }
     return ans;
 }
 
 int main(){
-    vector<int> arr = {19,9,30,22,7};
-    int m = 4, n=4;
+    vector<int> arr = {12,34,67,90};
+    int m = 2, n=4;
     int ans = findPages(arr,n,m);
     if(ans!=-1){
         cout<<"The answer is "<<ans;

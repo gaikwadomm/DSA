@@ -6,14 +6,25 @@
 using namespace std;
 
 void SubArrays(vector<int> arr){
+    // for(int size=1;size<=arr.size();size++){
+    //     for(int subPart=0;subPart<=arr.size()-size;subPart++){
+    //         cout<<"{ ";
+    //         for(int i=subPart;i<subPart+size;i++){
+    //             cout<<arr[i]<<" ";
+    //         }
+    //         cout<<"}\n";
+    //     }
+    // }
+
     for(int size=1;size<=arr.size();size++){
-        for(int subPart=0;subPart<=arr.size()-size;subPart++){
+        for(int subParts=0;subParts<=arr.size()-size;subParts++){
             cout<<"{ ";
-            for(int i=subPart;i<subPart+size;i++){
+            for(int i=subParts;i<subParts+size;i++){
                 cout<<arr[i]<<" ";
             }
-            cout<<"}\n";
+            cout<<"} ";
         }
+        cout<<"\n";
     }
 }
 

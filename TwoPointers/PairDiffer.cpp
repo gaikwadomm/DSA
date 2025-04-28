@@ -29,15 +29,31 @@ pair <int, int> PairDifferBinary(vector<int> arr, int target){
 
 //Using Two pointer approach O(n)
 pair <int, int> TwoSum(vector<int> numbers, int target){
-    int start = 0;
-    int end = start + 1;
-    vector<int> ans;
-    while(end<numbers.size()){
+    // int start = 0;
+    // int end = start + 1;
+    // vector<int> ans;
+    // while(end<numbers.size()){
+    //     int diff = numbers[end]-numbers[start];
+    //     if(diff==target){
+    //         return {numbers[start], numbers[end]};
+    //     }
+    //     else if(diff < target){
+    //         end++;
+    //     }
+    //     else{
+    //         start++;
+    //     }
+    // }
+    // return {-1,-1};
+
+    int start=0;
+    int end=start+1;
+    while(start<end){
         int diff = numbers[end]-numbers[start];
         if(diff==target){
             return {numbers[start], numbers[end]};
         }
-        else if(diff < target){
+        else if(diff<target){
             end++;
         }
         else{

@@ -7,7 +7,7 @@ void bishop_path(int a, int b){
     int total = 0;
 
     // (1,1), (1,8), (8,1), (8,8)
-    total = min(8-a,8-b) + min(a-1,b-1) + min(8-a,b-1) + min(a-1, 8-b);
+    total = min(8-a,8-b)+min(a-1,b-1)+min(8-a,b-1)+min(a-1,8-b);
     
     cout<<"The total number of steps that the Bishop can go with are "<<total;
 }

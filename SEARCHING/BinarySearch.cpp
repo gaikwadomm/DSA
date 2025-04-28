@@ -37,6 +37,7 @@ int binary_search(vector<int> arr, int start, int end, int num){
         }
     }
     return -1;
+
 }
 
 int main(){

@@ -5,19 +5,32 @@ using namespace std;
 
 int PeakIndex(vector<int> arr){
     int mid,start = 0, end = arr.size()-1;
+    // while(start<=end){
+    //     mid = end+(start-end)/2;
+    //     if((arr[mid]>arr[mid-1] && arr[mid]>arr[mid+1])){
+    //         cout<<start<<" "<<end<<endl;
+    //         return mid;
+    //     }
+    //     else if(arr[mid]>arr[mid-1]){
+    //         start = mid + 1;
+    //         cout<<"Start "<<start<<endl;
+    //     }
+    //     else{
+    //         end = mid - 1; 
+    //         cout<<"End "<<end<<endl;
+    //     }
+    // }
+
     while(start<=end){
-        mid = end+(start-end)/2;
-        if((arr[mid]>arr[mid-1] && arr[mid]>arr[mid+1])){
-            cout<<start<<" "<<end<<endl;
+        mid = start+(end-start)/2;
+        if(arr[mid]>arr[mid-1] && arr[mid]>arr[mid+1]){
             return mid;
         }
         else if(arr[mid]>arr[mid-1]){
-            start = mid + 1;
-            cout<<"Start "<<start<<endl;
+            start = mid+1;
         }
         else{
-            end = mid - 1; 
-            cout<<"End "<<end<<endl;
+            end = mid-1;
         }
     }
 }
