@@ -8,7 +8,11 @@ using namespace std;
 void equalSum(vector<int> arr){
     int totalSum = 0;
     for(int i =0;i<arr.size();i++){
-        totalSum+=arr[i];
+        totalSum+=arr[i];   
+    }
+    if(totalSum%2!=0){
+        cout<<"There is no two subarrays with equal sum";
+        return;
     }
     int prefix = 0;
     for(int i = 0; i<arr.size()-1;i++){
@@ -24,17 +28,17 @@ void equalSum(vector<int> arr){
 }
 
 int main(){
-    int size = 4, n;
-    vector<int> arr(size);
-    srand(time(0));
-    for(int i =0;i<size;i++){
-        arr[i] = rand() % 100;
-    }
-    cout<<"The actual array is ";
-    for(int i = 0;i<size;i++){
-        cout<<arr[i]<<" ";
-    }
-    cout<<"\n";
+    // int size = 4, n;
+    // vector<int> arr(size);
+    // srand(time(0));
+    // for(int i =0;i<size;i++){
+    //     arr[i] = rand() % 100;
+    // }
+    // cout<<"The actual array is ";
+    // for(int i = 0;i<size;i++){
+    //     cout<<arr[i]<<" ";
+    // }
+    // cout<<"\n";
     equalSum({3,4,-2,5,8,20,-10,8});
 
     // sort(arr.begin(), arr.end());
