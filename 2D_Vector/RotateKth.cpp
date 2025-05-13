@@ -2,7 +2,7 @@
 #include<vector>
 using namespace std;
 
-void rotate(vector<vector<int>>& matrix){
+void rotate(vector<vector<int>>&  matrix){
     int n = matrix.size();
     int col=n;
     //Without Creating the extra space for the ans
