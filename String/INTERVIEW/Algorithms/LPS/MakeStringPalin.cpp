@@ -103,5 +103,10 @@ int minChar(string s) {
 }
 
 int main(){
-    cout<<"The Min char required to make the given string a plaindrome are "<<minChar("roorsp");
+    string s = "roorsp";
+    int n = s.size();
+    int minToPut = minChar(s);
+    cout<<"The char to put to make palindrome are : ";
+    for(int i=n-1;i>=n-minToPut;i--) cout<<s[i]<<" "; 
+    cout<<"\nThe Min char required to make the given string a plaindrome are "<<minChar("roorsp");
 }
