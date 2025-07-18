@@ -2,17 +2,6 @@
 #include<vector>
 using namespace std;
 
-class a{
-    // b p p p n n n n c p p p p p p p d d d d d d d d
-    char b;
-    int n; //4 bytes
-    char c;  //char will also get 4 bytes as by the concept of padding in C++
-    // what is padding? 
-    // padding is the process of adding extra bytes to align data in memory
-    // padding is done to make the data structure more efficient in terms of memory access 
-    double d;   
-};
-
 class Student{
     // public:
     //     string name;
@@ -30,7 +19,7 @@ class Student{
             name = s;
         }
         void setAge(int n){
-            if(age<0 || age>100){
+            if(n<0 || n>100){
                 cout<<"Invalid User";
                 return; 
             }
@@ -55,6 +44,17 @@ int main(){
     // s1.setRoll_no(14);
     // s1.getName();
 
-    a obj;
-    cout<<sizeof(obj);
+    //This will store the object in heap memory 
+    // and we can access it using pointer
+    // This is called dynamic memory allocation
+    // We can use new keyword to allocate memory dynamically
+    // and delete keyword to deallocate memory
+    Student *s1 = new Student;
+    (*s1).setName("om gaikwad");
+    //or
+    (*s1).setAge(19);
+    (*s1).setGrade("A");
+    (*s1).setRoll_no(14);
+    (*s1).getName();
+    
 }
