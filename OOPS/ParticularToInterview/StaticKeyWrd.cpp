@@ -10,7 +10,7 @@ public:
     customer(string a, int b, int c){
         name = a;
         acc_no = b;
-        balance = c;
+        balance = c;                  
         total_customers++;
         total_balance += c;
     }
