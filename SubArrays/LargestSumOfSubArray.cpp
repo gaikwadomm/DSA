@@ -3,24 +3,46 @@
 #include<climits>
 using namespace std;
 
-pair<int, vector<int>> LargestSum(vector<int> arr){
-    int n = arr.size(), sum=0, max = INT_MIN;
-    vector<int> ans;
-    for(int i=0;i<n;i++){
-        vector<int> subArr;
-        for(int j=i;j<n;j++){
-            sum += arr[j];
-            // cout<<sum<<"\n";
-            subArr.push_back(arr[j]);
-            if(sum>max){
-                max=sum;
-                ans = subArr;
-            }
+// pair<int, vector<int>> LargestSum(vector<int> arr){
+//     int n = arr.size(), sum=0, max = INT_MIN;
+//     vector<int> ans;
+//     for(int i=0;i<n;i++){
+//         vector<int> subArr;
+//         for(int j=i;j<n;j++){
+//             sum += arr[j];
+//             // cout<<sum<<"\n";
+//             subArr.push_back(arr[j]);
+//             if(sum>max){
+//                 max=sum;
+//                 ans = subArr;
+//             }
             
-        }
+//         }
+//         sum=0;
+//     }
+//     return {max, ans};
+// }
+
+pair<int, vector<int>> LargestSum(vector<int> arr){
+    int n = arr.size(), sum=0, maxi = INT_MIN;
+    vector<int> ans;
+    int i=0;
+    while(i<n){
+        vector<int> subArr;
+        int j=i;
         sum=0;
+        while(arr[j]>=0 && j<n){
+            sum+=arr[j];
+            subArr.push_back(arr[j]);
+            j++;
+        }
+        if(sum>maxi){
+            maxi=sum;
+            ans = subArr;
+        } 
+        i=j+1;
     }
-    return {max, ans};
+    return {maxi, ans};
 }
 
 int main(){

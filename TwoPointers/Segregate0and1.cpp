@@ -19,6 +19,16 @@ vector<int> Segregate(vector<int> arr){
             }
         }
     }
+
+    //while(start<end){
+    //     if(arr[start]==1 && arr[end]==0){
+    //         swap(arr[start], arr[end]);
+    //     } else if(arr[start]==1){
+    //         end--;
+    //     } else{
+    //         start++;
+    //     }
+    // }
     return arr;
 }
 

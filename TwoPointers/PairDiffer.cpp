@@ -47,19 +47,18 @@ pair <int, int> TwoSum(vector<int> numbers, int target){
     // return {-1,-1};
 
     int start=0;
-    int end=start+1;
+    int end = start + 1;
+
     while(start<end){
-        int diff = numbers[end]-numbers[start];
-        if(diff==target){
-            return {numbers[start], numbers[end]};
-        }
-        else if(diff<target){
-            end++;
-        }
-        else{
+        if((numbers[end]-numbers[start])==target){
+            return {start, end};
+        } else if((numbers[end]-numbers[start])>target){
             start++;
+        } else{
+            end--;
         }
     }
+
     return {-1,-1};
 }
 

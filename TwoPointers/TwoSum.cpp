@@ -31,18 +31,19 @@ pair <int, int> TwoSumBinaryApproach(vector<int> arr, int target){
 pair <int, int> TwoSum(vector<int> numbers, int target){
     int start = 0, end = numbers.size()-1;
     vector<int> ans;
-    while(start < end){
-        int sum = numbers[start]+numbers[end];
-        if(sum==target){
-            return {numbers[start], numbers[end]};
+
+    while(start<end){
+        if(numbers[start]+numbers[end]==target){
+            return {start, end};
         }
-        else if(sum < target){
-            start++;
-        }
-        else{
+        else if((numbers[start]+numbers[end])>target){
             end--;
         }
+        else{
+            start++;
+        }
     }
+
     return {-1,-1};
 }
 

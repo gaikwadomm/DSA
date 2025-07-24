@@ -25,15 +25,15 @@ int binary(vector<int> arr, int start, int end, int num){
 int binary_search(vector<int> arr, int start, int end, int num){
     int mid;
     while(start<=end){
-        mid = (start+end)/2;
+        mid = start + (end-start)/2;
         if(arr[mid]==num){
             return mid;
         }
-        if(arr[mid]>num){
-            end = mid-1;
+        else if(arr[mid]<num){
+            start = mid + 1;
         }
         else{
-            start = mid + 1;
+            end = mid - 1;
         }
     }
     return -1;
