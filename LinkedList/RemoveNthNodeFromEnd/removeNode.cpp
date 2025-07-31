@@ -32,30 +32,24 @@ Node *createLink(Node *Head, int n){
     return Head;
 }
 
-
-
-Node *rotateList(Node *head, int n){
+Node *deleteNth(Node* head, int n){
     if(!head || n==0) return head;
-     Node *ptr = head;
-     int count = 1;
-     while(ptr->next){
+    Node *ptr = head;
+    int count = 1;
+    while(ptr->next){
         count++;
         ptr = ptr->next;
-     }
-     n = n%count;
-
-     if(n==0) return head;
-     
-     ptr->next = head;
-     ptr = head;
-     for(int i=1;i<count-n;i++){
-        ptr=ptr->next;
-     }
-     head = ptr->next;
-     ptr->next = NULL;
-     return head;
+    }
+    // cout<<count;
+    ptr = head;
+    for(int i=1;i<count-n;i++){
+        ptr = ptr->next;
+    }
+    Node *deletingNode = ptr->next;
+    ptr->next = deletingNode->next;
+    delete deletingNode;
+    return head;
 }
-
 
 void displayLL(Node *Head){
     if(Head==NULL){
@@ -78,8 +72,6 @@ int main(){
     Node *Head = createLink(NULL, n);
     displayLL(Head);
 
-    Head = rotateList(Head, 3);
+    Head = deleteNth(Head, 2);
     displayLL(Head);
-
-    
 }

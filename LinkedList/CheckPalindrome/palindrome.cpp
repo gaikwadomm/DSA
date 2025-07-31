@@ -1,4 +1,5 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 
 class Node{
@@ -32,30 +33,27 @@ Node *createLink(Node *Head, int n){
     return Head;
 }
 
-
-
-Node *rotateList(Node *head, int n){
-    if(!head || n==0) return head;
-     Node *ptr = head;
-     int count = 1;
-     while(ptr->next){
-        count++;
+//Extra space is created
+bool Plaindrome(Node *head){
+    vector<int> temp;
+    Node *ptr = head;
+    while(ptr){
+        temp.push_back(ptr->data);
         ptr = ptr->next;
-     }
-     n = n%count;
-
-     if(n==0) return head;
-     
-     ptr->next = head;
-     ptr = head;
-     for(int i=1;i<count-n;i++){
-        ptr=ptr->next;
-     }
-     head = ptr->next;
-     ptr->next = NULL;
-     return head;
+    }
+    int start = 0, end = temp.size()-1;
+    while(start<end){
+        if(temp[start]!=temp[end]){
+            return 0;
+        }
+    }
+    return 1;
 }
 
+//No extra space created
+bool plaindromeVal(Node *head){
+    
+}
 
 void displayLL(Node *Head){
     if(Head==NULL){
@@ -71,15 +69,5 @@ void displayLL(Node *Head){
 }
 
 int main(){
-    int n;
-    cout<<"Enter Number of data : ";
-    cin>>n;
 
-    Node *Head = createLink(NULL, n);
-    displayLL(Head);
-
-    Head = rotateList(Head, 3);
-    displayLL(Head);
-
-    
 }
