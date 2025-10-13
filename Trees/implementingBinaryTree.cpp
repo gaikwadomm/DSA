@@ -29,6 +29,27 @@ void display(Node *root){
     cout<<endl;
 }
 
+void displayPreOrder(Node *root){
+    if(root==NULL) return;
+    cout<<root->data<<" ";
+    displayPreOrder(root->left);
+    displayPreOrder(root->right);
+}
+
+void displayInOrder(Node *root){
+    if(root==NULL) return;
+    displayInOrder(root->left);
+    cout<<root->data<<" ";
+    displayInOrder(root->right);
+}
+
+void displayPostOrder(Node *root){
+    if(root==NULL) return;
+    displayInOrder(root->left);
+    displayInOrder(root->right);
+    cout<<root->data<<" ";
+}
+
 int main(){
     int x, left, right;
     queue<Node *> q;
@@ -61,5 +82,7 @@ int main(){
     }
 
     display(root);
+    cout<<endl;
+    displayPreOrder(root);
     
 }
